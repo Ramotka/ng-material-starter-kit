@@ -7,6 +7,7 @@ import {PublicHolidayComponent} from './components/public-holiday/public-holiday
 import {CategoryCheckboxListComponent} from './components/category-checkbox-list/category-checkbox-list.component';
 import {CategoriesMenuComponent} from './components/categories-menu/categories-menu.component';
 import {ProductFormComponent} from './components/product-form/product-form.component';
+import {EmployeeFormComponent} from './components/employee-form/employee-form.component';
 import {ProductListComponentModule} from './components/product-list/product-list.component-module';
 import {ProductsServiceModule} from './services/products.service-module';
 import {CategoryListComponentModule} from './components/category-list/category-list.component-module';
@@ -20,6 +21,8 @@ import {
 } from './components/category-checkbox-list/category-checkbox-list.component-module';
 import {CategoriesMenuComponentModule} from './components/categories-menu/categories-menu.component-module';
 import {ProductFormComponentModule} from './components/product-form/product-form.component-module';
+import {EmployeeFormComponentModule} from './components/employee-form/employee-form.component-module';
+import {EmployeesServiceModule} from './services/employees.service-module';
 
 @NgModule({
   imports: [RouterModule.forRoot([{path: 'products', component: ProductListComponent}, {
@@ -31,10 +34,10 @@ import {ProductFormComponentModule} from './components/product-form/product-form
   }, {path: 'checkbox-categories', component: CategoryCheckboxListComponent}, {
     path: 'categories-menu',
     component: CategoriesMenuComponent
-  }, {
-    path: 'create-product',
-    component: ProductFormComponent
-  }]), ProductListComponentModule, ProductsServiceModule, CategoryListComponentModule, CategoriesServiceModule, CryptoChipsComponentModule, CryptoServiceModule, PublicHolidayComponentModule, PublicHolidaysServiceModule, CategoryCheckboxListComponentModule, CategoriesMenuComponentModule, ProductFormComponentModule],
+  }, {path: 'create-product', component: ProductFormComponent}, {
+    path: 'create-employee',
+    component: EmployeeFormComponent
+  }]), ProductListComponentModule, ProductsServiceModule, CategoryListComponentModule, CategoriesServiceModule, CryptoChipsComponentModule, CryptoServiceModule, PublicHolidayComponentModule, PublicHolidaysServiceModule, CategoryCheckboxListComponentModule, CategoriesMenuComponentModule, ProductFormComponentModule, EmployeeFormComponentModule, EmployeesServiceModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
