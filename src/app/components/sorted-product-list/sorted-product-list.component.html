@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-title>Sort by price</mat-card-title>
+  <mat-card-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Choose an option</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let item of orders | async" [value]="item" (click)="order(item)">
+          {{item}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Products</mat-card-title>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let item of products$ | async">{{item.title}} {{item.price}}</mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
