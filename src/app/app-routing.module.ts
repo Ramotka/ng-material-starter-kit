@@ -10,10 +10,9 @@ import { ProductFormComponent } from './components/product-form/product-form.com
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { FilteredProductListComponent } from './components/filtered-product-list/filtered-product-list.component';
 import { SortedProductListComponent } from './components/sorted-product-list/sorted-product-list.component';
 import { FilteredProductsListByRoutingComponent } from './components/filtered-products-list-by-routing/filtered-products-list-by-routing.component';
+import { FilteredProductListWithSubjectComponent } from './components/filtered-product-list-with-subject/filtered-product-list-with-subject.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductsServiceModule } from './services/products.service-module';
 import { CategoryListComponentModule } from './components/category-list/category-list.component-module';
@@ -32,12 +31,14 @@ import { LoginServiceModule } from './services/login.service-module';
 import { RegisterFormComponentModule } from './components/register-form/register-form.component-module';
 import { UsersServiceModule } from './services/users.service-module';
 import { ProductDetailComponentModule } from './components/product-detail/product-detail.component-module';
-import { FilteredProductListComponentModule } from './components/filtered-product-list/filtered-product-list.component-module';
 import { SortedProductListComponentModule } from './components/sorted-product-list/sorted-product-list.component-module';
 import { FilteredProductsListByRoutingComponentModule } from './components/filtered-products-list-by-routing/filtered-products-list-by-routing.component-module';
+import { FilteredProductListWithSubjectComponentModule } from './components/filtered-product-list-with-subject/filtered-product-list-with-subject.component-module';
+
+;
 
 @NgModule({
-  imports: [RouterModule.forRoot([{ path: 'products', component: ProductListComponent }, { path: 'categories', component: CategoryListComponent }, { path: 'crypto', component: CryptoChipsComponent }, { path: 'public-holidays', component: PublicHolidayComponent }, { path: 'checkbox-categories', component: CategoryCheckboxListComponent }, { path: 'categories-menu', component: CategoriesMenuComponent }, { path: 'create-product', component: ProductFormComponent }, { path: 'create-employee', component: EmployeeFormComponent }, { path: 'login', component: LogInComponent }, { path: 'register', component: RegisterFormComponent }, { path: 'product/:id', component: ProductDetailComponent }, { path: 'products/filter', component: FilteredProductListComponent }, { path: 'products/sort', component: SortedProductListComponent }, { path: 'products/:category', component: FilteredProductsListByRoutingComponent }]), ProductListComponentModule, ProductsServiceModule, CategoryListComponentModule, CategoriesServiceModule, CryptoChipsComponentModule, CryptoServiceModule, PublicHolidayComponentModule, PublicHolidaysServiceModule, CategoryCheckboxListComponentModule, CategoriesMenuComponentModule, ProductFormComponentModule, EmployeeFormComponentModule, EmployeesServiceModule, LogInComponentModule, LoginServiceModule, RegisterFormComponentModule, UsersServiceModule, ProductDetailComponentModule, FilteredProductListComponentModule, SortedProductListComponentModule, FilteredProductsListByRoutingComponentModule],
+  imports: [RouterModule.forRoot([{ path: 'products-list', component: ProductListComponent }, { path: 'categories', component: CategoryListComponent }, { path: 'crypto', component: CryptoChipsComponent }, { path: 'public-holidays', component: PublicHolidayComponent }, { path: 'checkbox-categories', component: CategoryCheckboxListComponent }, { path: 'categories-menu', component: CategoriesMenuComponent }, { path: 'create-product', component: ProductFormComponent }, { path: 'create-employee', component: EmployeeFormComponent }, { path: 'login', component: LogInComponent }, { path: 'register', component: RegisterFormComponent }, { path: 'products/sort', component: SortedProductListComponent }, { path: 'products/:category', component: FilteredProductsListByRoutingComponent }, { path: 'products', component: FilteredProductListWithSubjectComponent }]), ProductListComponentModule, ProductsServiceModule, CategoryListComponentModule, CategoriesServiceModule, CryptoChipsComponentModule, CryptoServiceModule, PublicHolidayComponentModule, PublicHolidaysServiceModule, CategoryCheckboxListComponentModule, CategoriesMenuComponentModule, ProductFormComponentModule, EmployeeFormComponentModule, EmployeesServiceModule, LogInComponentModule, LoginServiceModule, RegisterFormComponentModule, UsersServiceModule, ProductDetailComponentModule, SortedProductListComponentModule, FilteredProductsListByRoutingComponentModule, FilteredProductListWithSubjectComponentModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

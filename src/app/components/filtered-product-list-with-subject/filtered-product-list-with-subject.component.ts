@@ -1,33 +1,32 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Observable, Subject, combineLatest } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { ProductModel } from '../../models/product.model';
-import { CategoriesService } from '../../services/categories.service';
 import { ProductsService } from '../../services/products.service';
+import { CategoriesService } from '../../services/categories.service';
 
 @Component({
-  selector: 'app-filtered-product-list',
-  templateUrl: './filtered-product-list.component.html',
+  selector: 'app-filtered-product-list-with-subject',
+  templateUrl: './filtered-product-list-with-subject.component.html',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FilteredProductListComponent {
+export class FilteredProductListWithSubjectComponent {
+  private _categoriesSubject: Subject<string> = new Subject<string>();
+  public category$: Observable<string> = this._categoriesSubject.asObservable();
   readonly categories$: Observable<string[]> = this._categoriesService.getAll();
-  private _categorySubject: Subject<string> = new Subject<string>();
-  public category$: Observable<string> = this._categorySubject.asObservable();
 
   readonly products$: Observable<ProductModel[]> = combineLatest([
     this._productsService.getAll(),
     this.category$
   ]).pipe(map(([products, category]: [ProductModel[], string]) => {
-    return products.filter((product) => product.category === category)
-  }));
+    return products.filter((product: ProductModel) => product.category === category)
+  }))
 
-  constructor(private _categoriesService: CategoriesService, private _activatedRoute: ActivatedRoute, private _productsService: ProductsService) {
+  constructor(private _productsService: ProductsService, private _categoriesService: CategoriesService) {
   }
 
   selectCategory(category: string): void {
-    this._categorySubject.next(category)
+    this._categoriesSubject.next(category)
   }
 }
