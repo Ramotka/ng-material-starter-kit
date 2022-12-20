@@ -26,4 +26,8 @@ export class AdvancedEmployeesService {
       }
     ));
   }
+
+  delete(id: string): Observable<AdvancedEmployeeModel> {
+    return this._httpClient.delete<AdvancedEmployeeModel>('https://dummy.restapiexample.com/api/v1/delete/' + id)
+  }
 }
