@@ -18,6 +18,7 @@ import {
   FilteredProductListWithSubjectComponent
 } from './components/filtered-product-list-with-subject/filtered-product-list-with-subject.component';
 import {ProductsListSortingComponent} from './components/products-list-sorting/products-list-sorting.component';
+import {AdvancedEmployeeListComponent} from './components/advanced-employee-list/advanced-employee-list.component';
 import {ProductListComponentModule} from './components/product-list/product-list.component-module';
 import {ProductsServiceModule} from './services/products.service-module';
 import {CategoryListComponentModule} from './components/category-list/category-list.component-module';
@@ -48,6 +49,10 @@ import {
 import {
   ProductsListSortingComponentModule
 } from './components/products-list-sorting/products-list-sorting.component-module';
+import {
+  AdvancedEmployeeListComponentModule
+} from './components/advanced-employee-list/advanced-employee-list.component-module';
+import {AdvancedEmployeesServiceModule} from "./services/advanced-employees.service-module";
 
 ;
 
@@ -73,7 +78,10 @@ import {
   }, {path: 'products', component: FilteredProductListWithSubjectComponent}, {
     path: 'sorted-products',
     component: ProductsListSortingComponent
-  }]), ProductListComponentModule, ProductsServiceModule, CategoryListComponentModule, CategoriesServiceModule, CryptoChipsComponentModule, CryptoServiceModule, PublicHolidayComponentModule, PublicHolidaysServiceModule, CategoryCheckboxListComponentModule, CategoriesMenuComponentModule, ProductFormComponentModule, EmployeeFormComponentModule, EmployeesServiceModule, LogInComponentModule, LoginServiceModule, RegisterFormComponentModule, UsersServiceModule, ProductDetailComponentModule, SortedProductListComponentModule, FilteredProductsListByRoutingComponentModule, FilteredProductListWithSubjectComponentModule, ProductsListSortingComponentModule],
+  }, {
+    path: 'advanced-list',
+    component: AdvancedEmployeeListComponent
+  }]), ProductListComponentModule, ProductsServiceModule, CategoryListComponentModule, CategoriesServiceModule, CryptoChipsComponentModule, CryptoServiceModule, PublicHolidayComponentModule, PublicHolidaysServiceModule, CategoryCheckboxListComponentModule, CategoriesMenuComponentModule, ProductFormComponentModule, EmployeeFormComponentModule, EmployeesServiceModule, LogInComponentModule, LoginServiceModule, RegisterFormComponentModule, UsersServiceModule, ProductDetailComponentModule, SortedProductListComponentModule, FilteredProductsListByRoutingComponentModule, FilteredProductListWithSubjectComponentModule, ProductsListSortingComponentModule, AdvancedEmployeeListComponentModule, AdvancedEmployeesServiceModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

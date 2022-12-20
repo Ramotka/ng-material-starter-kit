@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-title>Filter by age:</mat-card-title>
+  <mat-card-content>
+    <mat-selection-list role="list" fxLayout="row" [multiple]="false">
+      <mat-list-option role="listoption" *ngFor="let item of ranges$ | async" [value]="item" (click)="selectRange(item)">
+        {{item}}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card>
+  <mat-card-title>Sort by salary:</mat-card-title>
+  <mat-card-content>
+    <mat-selection-list role="list" fxLayout="row" [multiple]="false">
+      <mat-list-option role="listoption" *ngFor="let item of orders$ | async" [value]="item" (click)="sort(item)">
+        {{item}}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card>
+  <mat-card-title>Employees</mat-card-title>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let item of employees$ | async">id: {{item.id}}, name: {{item.name}}, age: {{item.age}},
+        salary: ${{item.salary}}</mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+
+
