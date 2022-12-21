@@ -3,7 +3,7 @@
   <mat-card-content>
     <mat-selection-list *ngIf="categoryList$ | async as list; else loading">
       <ng-container *ngIf="list.length > 0; else emptyState">
-        <mat-list-option *ngFor="let item of categoryList$ | async">{{item}}</mat-list-option>
+        <mat-list-option *ngFor="let item of list">{{item}}</mat-list-option>
       </ng-container>
       <ng-template #emptyState>
         Oops. There is nothing here!
