@@ -3,7 +3,7 @@
   <mat-card-content>
     <mat-list role="list" *ngIf="list$ | async as list; else loading">
       <ng-container *ngIf="list.length > 0; else emptyState">
-        <mat-list-item role="listitem" *ngFor="let item of list$ | async">{{item.title}} {{item.price}}</mat-list-item>
+        <mat-list-item role="listitem" *ngFor="let item of list$ | async">{{item.title}} {{item.price}} <button mat-raised-button color="primary" [routerLink]="'/product/' + item.id">See Details</button></mat-list-item>
       </ng-container>
       <ng-template #emptyState>
         Oops. There is nothing here!
