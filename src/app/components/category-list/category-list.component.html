@@ -1,8 +1,20 @@
 <mat-card>
   <mat-card-title>Select category:</mat-card-title>
   <mat-card-content>
-    <mat-selection-list>
-          <mat-list-option *ngFor="let item of categoryList$ | async">{{item}}</mat-list-option>
+    <mat-selection-list *ngIf="categoryList$ | async as list; else loading">
+      <ng-container *ngIf="list.length > 0; else emptyState">
+        <mat-list-option *ngFor="let item of categoryList$ | async">{{item}}</mat-list-option>
+      </ng-container>
+      <ng-template #emptyState>
+        Oops. There is nothing here!
+      </ng-template>
     </mat-selection-list>
+    <ng-template #loading>
+      <mat-progress-spinner
+        [color]="'accent'"
+        [mode]="'indeterminate'"
+        [value]="50">
+      </mat-progress-spinner>
+    </ng-template>
   </mat-card-content>
 </mat-card>
