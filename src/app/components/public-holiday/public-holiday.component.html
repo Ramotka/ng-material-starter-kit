@@ -2,12 +2,17 @@
   <mat-card-title></mat-card-title>
   <mat-card-content>
  <mat-form-field appearance="fill" *ngIf="list$ | async as list; else loading">
+   <ng-container *ngIf="list.length > 0; else emptyState">
   <mat-label>Choose an option</mat-label>
   <mat-select>
     <mat-option *ngFor="let item of list$ | async">
      {{item.name}}
 </mat-option>
    </mat-select>
+   </ng-container>
+   <ng-template #emptyState>
+     Oops. There is nothing here!
+   </ng-template>
 </mat-form-field>
     <ng-template #loading>
       <mat-progress-bar
