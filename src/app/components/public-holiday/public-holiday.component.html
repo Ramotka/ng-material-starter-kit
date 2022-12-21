@@ -5,7 +5,7 @@
    <ng-container *ngIf="list.length > 0; else emptyState">
   <mat-label>Choose an option</mat-label>
   <mat-select>
-    <mat-option *ngFor="let item of list$ | async">
+    <mat-option *ngFor="let item of list">
      {{item.name}}
 </mat-option>
    </mat-select>
