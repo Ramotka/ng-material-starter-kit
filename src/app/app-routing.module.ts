@@ -21,6 +21,7 @@ import { BeerListComponent } from './components/beer-list/beer-list.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { CatFactsComponent } from './components/cat-facts/cat-facts.component';
 import { AgePredictionComponent } from './components/age-prediction/age-prediction.component';
+import { ProductMasterDetailsComponent } from './components/product-master-details/product-master-details.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductsServiceModule } from './services/products.service-module';
 import { CategoryListComponentModule } from './components/category-list/category-list.component-module';
@@ -52,14 +53,78 @@ import { ProductDetailsComponentModule } from './components/product-details/prod
 import { CatFactsComponentModule } from './components/cat-facts/cat-facts.component-module';
 import { CatFactsServiceModule } from './services/cat-facts.service-module';
 import { AgePredictionComponentModule } from './components/age-prediction/age-prediction.component-module';
-import {PredictionsService} from "./services/predictions.service";
-import {PredictionsServiceModule} from "./services/predictions.service-module";
-
-;
+import { PredictionsServiceModule } from './services/predictions.service-module';
+import { ProductMasterDetailsComponentModule } from './components/product-master-details/product-master-details.component-module';
 
 @NgModule({
-  imports: [RouterModule.forRoot([{ path: 'products', component: ProductListComponent }, { path: 'categories', component: CategoryListComponent }, { path: 'crypto', component: CryptoChipsComponent }, { path: 'public-holidays', component: PublicHolidayComponent }, { path: 'checkbox-categories', component: CategoryCheckboxListComponent }, { path: 'categories-menu', component: CategoriesMenuComponent }, { path: 'create-product', component: ProductFormComponent }, { path: 'create-employee', component: EmployeeFormComponent }, { path: 'login', component: LogInComponent }, { path: 'register', component: RegisterFormComponent }, { path: 'products/sort', component: SortedProductListComponent }, { path: 'products/:category', component: FilteredProductsListByRoutingComponent }, { path: 'products-filter-subject', component: FilteredProductListWithSubjectComponent }, { path: 'sorted-products', component: ProductsListSortingComponent }, { path: 'advanced-list', component: AdvancedEmployeeListComponent }, { path: 'refresh-products', component: RefreshProductsComponent }, { path: 'refresh-employees', component: RefreshEmployeesComponent }, { path: 'beers-with-pagination', component: BeerListComponent }, { path: 'product/:id', component: ProductDetailsComponent }, { path: 'cat-fact', component: CatFactsComponent }, { path: 'age/:name', component: AgePredictionComponent }]), ProductListComponentModule, ProductsServiceModule, CategoryListComponentModule, CategoriesServiceModule, CryptoChipsComponentModule, CryptoServiceModule, PublicHolidayComponentModule, PublicHolidaysServiceModule, CategoryCheckboxListComponentModule, CategoriesMenuComponentModule, ProductFormComponentModule, EmployeeFormComponentModule, EmployeesServiceModule, LogInComponentModule, LoginServiceModule, RegisterFormComponentModule, UsersServiceModule, SortedProductListComponentModule, FilteredProductsListByRoutingComponentModule, FilteredProductListWithSubjectComponentModule, ProductsListSortingComponentModule, AdvancedEmployeeListComponentModule, AdvancedEmployeesServiceModule, RefreshProductsComponentModule, RefreshEmployeesComponentModule, BeerListComponentModule, BeersServiceModule, ProductDetailsComponentModule, CatFactsComponentModule, CatFactsServiceModule, AgePredictionComponentModule, PredictionsServiceModule],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot([
+      { path: 'products', component: ProductListComponent },
+      { path: 'categories', component: CategoryListComponent },
+      { path: 'crypto', component: CryptoChipsComponent },
+      { path: 'public-holidays', component: PublicHolidayComponent },
+      { path: 'checkbox-categories', component: CategoryCheckboxListComponent },
+      { path: 'categories-menu', component: CategoriesMenuComponent },
+      { path: 'create-product', component: ProductFormComponent },
+      { path: 'create-employee', component: EmployeeFormComponent },
+      { path: 'login', component: LogInComponent },
+      { path: 'register', component: RegisterFormComponent },
+      { path: 'products/sort', component: SortedProductListComponent },
+      {
+        path: 'products/:category',
+        component: FilteredProductsListByRoutingComponent,
+      },
+      {
+        path: 'products-filter-subject',
+        component: FilteredProductListWithSubjectComponent,
+      },
+      { path: 'sorted-products', component: ProductsListSortingComponent },
+      { path: 'advanced-list', component: AdvancedEmployeeListComponent },
+      { path: 'refresh-products', component: RefreshProductsComponent },
+      { path: 'refresh-employees', component: RefreshEmployeesComponent },
+      { path: 'beers-with-pagination', component: BeerListComponent },
+      { path: 'product/:id', component: ProductDetailsComponent },
+      { path: 'cat-fact', component: CatFactsComponent },
+      { path: 'age/:name', component: AgePredictionComponent },
+      {
+        path: 'products-master-details',
+        component: ProductMasterDetailsComponent,
+      },
+    ]),
+    ProductListComponentModule,
+    ProductsServiceModule,
+    CategoryListComponentModule,
+    CategoriesServiceModule,
+    CryptoChipsComponentModule,
+    CryptoServiceModule,
+    PublicHolidayComponentModule,
+    PublicHolidaysServiceModule,
+    CategoryCheckboxListComponentModule,
+    CategoriesMenuComponentModule,
+    ProductFormComponentModule,
+    EmployeeFormComponentModule,
+    EmployeesServiceModule,
+    LogInComponentModule,
+    LoginServiceModule,
+    RegisterFormComponentModule,
+    UsersServiceModule,
+    SortedProductListComponentModule,
+    FilteredProductsListByRoutingComponentModule,
+    FilteredProductListWithSubjectComponentModule,
+    ProductsListSortingComponentModule,
+    AdvancedEmployeeListComponentModule,
+    AdvancedEmployeesServiceModule,
+    RefreshProductsComponentModule,
+    RefreshEmployeesComponentModule,
+    BeerListComponentModule,
+    BeersServiceModule,
+    ProductDetailsComponentModule,
+    CatFactsComponentModule,
+    CatFactsServiceModule,
+    AgePredictionComponentModule,
+    PredictionsServiceModule,
+    ProductMasterDetailsComponentModule,
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}
