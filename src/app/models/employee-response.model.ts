@@ -4,5 +4,4 @@ export interface EmployeeResponse {
   employee_salary: string;
   employee_age: string;
   profile_image: string;
-
 }

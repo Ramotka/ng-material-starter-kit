@@ -22,6 +22,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { CatFactsComponent } from './components/cat-facts/cat-facts.component';
 import { AgePredictionComponent } from './components/age-prediction/age-prediction.component';
 import { ProductMasterDetailsComponent } from './components/product-master-details/product-master-details.component';
+import { EmployeeMasterDetailsComponent } from './components/employee-master-details/employee-master-details.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductsServiceModule } from './services/products.service-module';
 import { CategoryListComponentModule } from './components/category-list/category-list.component-module';
@@ -55,6 +56,7 @@ import { CatFactsServiceModule } from './services/cat-facts.service-module';
 import { AgePredictionComponentModule } from './components/age-prediction/age-prediction.component-module';
 import { PredictionsServiceModule } from './services/predictions.service-module';
 import { ProductMasterDetailsComponentModule } from './components/product-master-details/product-master-details.component-module';
+import { EmployeeMasterDetailsComponentModule } from './components/employee-master-details/employee-master-details.component-module';
 
 @NgModule({
   imports: [
@@ -70,14 +72,8 @@ import { ProductMasterDetailsComponentModule } from './components/product-master
       { path: 'login', component: LogInComponent },
       { path: 'register', component: RegisterFormComponent },
       { path: 'products/sort', component: SortedProductListComponent },
-      {
-        path: 'products/:category',
-        component: FilteredProductsListByRoutingComponent,
-      },
-      {
-        path: 'products-filter-subject',
-        component: FilteredProductListWithSubjectComponent,
-      },
+      { path: 'products/:category', component: FilteredProductsListByRoutingComponent },
+      { path: 'products-filter-subject', component: FilteredProductListWithSubjectComponent },
       { path: 'sorted-products', component: ProductsListSortingComponent },
       { path: 'advanced-list', component: AdvancedEmployeeListComponent },
       { path: 'refresh-products', component: RefreshProductsComponent },
@@ -86,10 +82,8 @@ import { ProductMasterDetailsComponentModule } from './components/product-master
       { path: 'product/:id', component: ProductDetailsComponent },
       { path: 'cat-fact', component: CatFactsComponent },
       { path: 'age/:name', component: AgePredictionComponent },
-      {
-        path: 'products-master-details',
-        component: ProductMasterDetailsComponent,
-      },
+      { path: 'products-master-details', component: ProductMasterDetailsComponent },
+      { path: 'employees-master-details', component: EmployeeMasterDetailsComponent }
     ]),
     ProductListComponentModule,
     ProductsServiceModule,
@@ -124,7 +118,8 @@ import { ProductMasterDetailsComponentModule } from './components/product-master
     AgePredictionComponentModule,
     PredictionsServiceModule,
     ProductMasterDetailsComponentModule,
+    EmployeeMasterDetailsComponentModule
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
