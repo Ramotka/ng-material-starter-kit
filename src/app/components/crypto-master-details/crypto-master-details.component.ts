@@ -14,8 +14,9 @@ import { NewCryptoService } from '../../services/new-crypto.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CryptoMasterDetailsComponent {
-  private _selectedCryptoSubject: Subject<string> = new Subject<string>();
-  public selectedCrypto$: Observable<string> =
+  private _selectedCryptoSubject: Subject<NewCryptoModel> =
+    new Subject<NewCryptoModel>();
+  public selectedCrypto$: Observable<NewCryptoModel> =
     this._selectedCryptoSubject.asObservable();
 
   readonly crypto$: Observable<NewCryptoModel[]> =
@@ -23,7 +24,7 @@ export class CryptoMasterDetailsComponent {
 
   constructor(private _newCryptoService: NewCryptoService) {}
 
-  selectCrypto(priceChange: string): void {
-    this._selectedCryptoSubject.next(priceChange);
+  selectCrypto(data: NewCryptoModel): void {
+    this._selectedCryptoSubject.next(data);
   }
 }
