@@ -1,0 +1,25 @@
+.spinner {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-state-message {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  animation: floatIn 1s forwards;
+}
+
+@keyframes floatIn {
+  from {
+    transform: translate3d(0, 100%, 0)
+  }
+  to {
+    transform: translate3d(0, 0, 0)
+  }
+}

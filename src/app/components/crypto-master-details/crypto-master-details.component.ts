@@ -10,6 +10,7 @@ import { NewCryptoService } from '../../services/new-crypto.service';
 @Component({
   selector: 'app-crypto-master-details',
   templateUrl: './crypto-master-details.component.html',
+  styleUrls: ['./crypto-master-details.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

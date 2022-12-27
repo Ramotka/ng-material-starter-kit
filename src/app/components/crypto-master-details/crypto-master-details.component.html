@@ -1,13 +1,22 @@
-<mat-grid-list cols="2" rowHeight="1:1">
-  <mat-grid-tile
-    ><mat-list role="list"
-      ><mat-list-item role="listitem" *ngFor="let item of crypto$ | async"
-        >{{ item.symbol }}
-        <button mat-button color="primary" (click)="selectCrypto(item)">
-          Show price change
-        </button></mat-list-item
-      ></mat-list
-    ></mat-grid-tile
+<mat-grid-list
+  cols="2"
+  rowHeight="1:1"
+  *ngIf="crypto$ | async as crypto; else loading"
+>
+  <ng-container *ngIf="crypto.length > 0; else emptyState">
+    <mat-grid-tile
+      ><mat-list role="list"
+        ><mat-list-item role="listitem" *ngFor="let item of crypto"
+          >{{ item.symbol }}
+          <button mat-button color="primary" (click)="selectCrypto(item)">
+            Show price change
+          </button></mat-list-item
+        ></mat-list
+      ></mat-grid-tile
+    >
+  </ng-container>
+  <ng-template #emptyState>
+    <div class="empty-state-message">Oops. There is no data.</div></ng-template
   >
   <mat-grid-tile
     ><ng-container *ngIf="selectedCrypto$ | async as item">{{
@@ -15,3 +24,12 @@
     }}</ng-container></mat-grid-tile
   >
 </mat-grid-list>
+<ng-template #loading>
+  <div class="spinner">
+    <mat-progress-spinner
+      [color]="'primary'"
+      [mode]="'indeterminate'"
+      [value]="50"
+    >
+    </mat-progress-spinner></div
+></ng-template>
