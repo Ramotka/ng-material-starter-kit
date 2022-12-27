@@ -23,6 +23,7 @@ import { CatFactsComponent } from './components/cat-facts/cat-facts.component';
 import { AgePredictionComponent } from './components/age-prediction/age-prediction.component';
 import { ProductMasterDetailsComponent } from './components/product-master-details/product-master-details.component';
 import { EmployeeMasterDetailsComponent } from './components/employee-master-details/employee-master-details.component';
+import { CryptoMasterDetailsComponent } from './components/crypto-master-details/crypto-master-details.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductsServiceModule } from './services/products.service-module';
 import { CategoryListComponentModule } from './components/category-list/category-list.component-module';
@@ -57,6 +58,8 @@ import { AgePredictionComponentModule } from './components/age-prediction/age-pr
 import { PredictionsServiceModule } from './services/predictions.service-module';
 import { ProductMasterDetailsComponentModule } from './components/product-master-details/product-master-details.component-module';
 import { EmployeeMasterDetailsComponentModule } from './components/employee-master-details/employee-master-details.component-module';
+import { CryptoMasterDetailsComponentModule } from './components/crypto-master-details/crypto-master-details.component-module';
+import { NewCryptoServiceModule } from './services/new-crypto.service-module';
 
 @NgModule({
   imports: [
@@ -72,8 +75,14 @@ import { EmployeeMasterDetailsComponentModule } from './components/employee-mast
       { path: 'login', component: LogInComponent },
       { path: 'register', component: RegisterFormComponent },
       { path: 'products/sort', component: SortedProductListComponent },
-      { path: 'products/:category', component: FilteredProductsListByRoutingComponent },
-      { path: 'products-filter-subject', component: FilteredProductListWithSubjectComponent },
+      {
+        path: 'products/:category',
+        component: FilteredProductsListByRoutingComponent,
+      },
+      {
+        path: 'products-filter-subject',
+        component: FilteredProductListWithSubjectComponent,
+      },
       { path: 'sorted-products', component: ProductsListSortingComponent },
       { path: 'advanced-list', component: AdvancedEmployeeListComponent },
       { path: 'refresh-products', component: RefreshProductsComponent },
@@ -82,8 +91,18 @@ import { EmployeeMasterDetailsComponentModule } from './components/employee-mast
       { path: 'product/:id', component: ProductDetailsComponent },
       { path: 'cat-fact', component: CatFactsComponent },
       { path: 'age/:name', component: AgePredictionComponent },
-      { path: 'products-master-details', component: ProductMasterDetailsComponent },
-      { path: 'employees-master-details', component: EmployeeMasterDetailsComponent }
+      {
+        path: 'products-master-details',
+        component: ProductMasterDetailsComponent,
+      },
+      {
+        path: 'employees-master-details',
+        component: EmployeeMasterDetailsComponent,
+      },
+      {
+        path: 'crypto-master-details',
+        component: CryptoMasterDetailsComponent,
+      },
     ]),
     ProductListComponentModule,
     ProductsServiceModule,
@@ -118,8 +137,10 @@ import { EmployeeMasterDetailsComponentModule } from './components/employee-mast
     AgePredictionComponentModule,
     PredictionsServiceModule,
     ProductMasterDetailsComponentModule,
-    EmployeeMasterDetailsComponentModule
+    EmployeeMasterDetailsComponentModule,
+    CryptoMasterDetailsComponentModule,
+    NewCryptoServiceModule,
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
