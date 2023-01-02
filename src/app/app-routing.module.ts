@@ -24,6 +24,7 @@ import { AgePredictionComponent } from './components/age-prediction/age-predicti
 import { ProductMasterDetailsComponent } from './components/product-master-details/product-master-details.component';
 import { EmployeeMasterDetailsComponent } from './components/employee-master-details/employee-master-details.component';
 import { CryptoMasterDetailsComponent } from './components/crypto-master-details/crypto-master-details.component';
+import { ProductsSearchComponent } from './components/products-search/products-search.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductsServiceModule } from './services/products.service-module';
 import { CategoryListComponentModule } from './components/category-list/category-list.component-module';
@@ -60,6 +61,7 @@ import { ProductMasterDetailsComponentModule } from './components/product-master
 import { EmployeeMasterDetailsComponentModule } from './components/employee-master-details/employee-master-details.component-module';
 import { CryptoMasterDetailsComponentModule } from './components/crypto-master-details/crypto-master-details.component-module';
 import { NewCryptoServiceModule } from './services/new-crypto.service-module';
+import { ProductsSearchComponentModule } from './components/products-search/products-search.component-module';
 
 @NgModule({
   imports: [
@@ -75,14 +77,8 @@ import { NewCryptoServiceModule } from './services/new-crypto.service-module';
       { path: 'login', component: LogInComponent },
       { path: 'register', component: RegisterFormComponent },
       { path: 'products/sort', component: SortedProductListComponent },
-      {
-        path: 'products/:category',
-        component: FilteredProductsListByRoutingComponent,
-      },
-      {
-        path: 'products-filter-subject',
-        component: FilteredProductListWithSubjectComponent,
-      },
+      { path: 'products/:category', component: FilteredProductsListByRoutingComponent },
+      { path: 'products-filter-subject', component: FilteredProductListWithSubjectComponent },
       { path: 'sorted-products', component: ProductsListSortingComponent },
       { path: 'advanced-list', component: AdvancedEmployeeListComponent },
       { path: 'refresh-products', component: RefreshProductsComponent },
@@ -91,18 +87,10 @@ import { NewCryptoServiceModule } from './services/new-crypto.service-module';
       { path: 'product/:id', component: ProductDetailsComponent },
       { path: 'cat-fact', component: CatFactsComponent },
       { path: 'age/:name', component: AgePredictionComponent },
-      {
-        path: 'products-master-details',
-        component: ProductMasterDetailsComponent,
-      },
-      {
-        path: 'employees-master-details',
-        component: EmployeeMasterDetailsComponent,
-      },
-      {
-        path: 'crypto-master-details',
-        component: CryptoMasterDetailsComponent,
-      },
+      { path: 'products-master-details', component: ProductMasterDetailsComponent },
+      { path: 'employees-master-details', component: EmployeeMasterDetailsComponent },
+      { path: 'crypto-master-details', component: CryptoMasterDetailsComponent },
+      { path: 'products-search', component: ProductsSearchComponent }
     ]),
     ProductListComponentModule,
     ProductsServiceModule,
@@ -140,7 +128,8 @@ import { NewCryptoServiceModule } from './services/new-crypto.service-module';
     EmployeeMasterDetailsComponentModule,
     CryptoMasterDetailsComponentModule,
     NewCryptoServiceModule,
+    ProductsSearchComponentModule
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
