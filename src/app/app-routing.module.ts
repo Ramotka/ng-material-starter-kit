@@ -25,6 +25,7 @@ import { ProductMasterDetailsComponent } from './components/product-master-detai
 import { EmployeeMasterDetailsComponent } from './components/employee-master-details/employee-master-details.component';
 import { CryptoMasterDetailsComponent } from './components/crypto-master-details/crypto-master-details.component';
 import { ProductsSearchComponent } from './components/products-search/products-search.component';
+import { ProductsLiveReloadSearchComponent } from './components/products-live-reload-search/products-live-reload-search.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductsServiceModule } from './services/products.service-module';
 import { CategoryListComponentModule } from './components/category-list/category-list.component-module';
@@ -62,6 +63,7 @@ import { EmployeeMasterDetailsComponentModule } from './components/employee-mast
 import { CryptoMasterDetailsComponentModule } from './components/crypto-master-details/crypto-master-details.component-module';
 import { NewCryptoServiceModule } from './services/new-crypto.service-module';
 import { ProductsSearchComponentModule } from './components/products-search/products-search.component-module';
+import { ProductsLiveReloadSearchComponentModule } from './components/products-live-reload-search/products-live-reload-search.component-module';
 
 @NgModule({
   imports: [
@@ -90,7 +92,8 @@ import { ProductsSearchComponentModule } from './components/products-search/prod
       { path: 'products-master-details', component: ProductMasterDetailsComponent },
       { path: 'employees-master-details', component: EmployeeMasterDetailsComponent },
       { path: 'crypto-master-details', component: CryptoMasterDetailsComponent },
-      { path: 'products-search', component: ProductsSearchComponent }
+      { path: 'products-search', component: ProductsSearchComponent },
+      { path: 'products-search-live-reload', component: ProductsLiveReloadSearchComponent }
     ]),
     ProductListComponentModule,
     ProductsServiceModule,
@@ -128,7 +131,8 @@ import { ProductsSearchComponentModule } from './components/products-search/prod
     EmployeeMasterDetailsComponentModule,
     CryptoMasterDetailsComponentModule,
     NewCryptoServiceModule,
-    ProductsSearchComponentModule
+    ProductsSearchComponentModule,
+    ProductsLiveReloadSearchComponentModule
   ],
   exports: [RouterModule],
 })
