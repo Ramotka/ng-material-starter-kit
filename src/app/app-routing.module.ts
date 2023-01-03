@@ -27,6 +27,7 @@ import { CryptoMasterDetailsComponent } from './components/crypto-master-details
 import { ProductsSearchComponent } from './components/products-search/products-search.component';
 import { ProductsLiveReloadSearchComponent } from './components/products-live-reload-search/products-live-reload-search.component';
 import { ProductsSearchInServiceComponent } from './components/products-search-in-service/products-search-in-service.component';
+import { SortSingleProductComponent } from './components/sort-single-product/sort-single-product.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductsServiceModule } from './services/products.service-module';
 import { CategoryListComponentModule } from './components/category-list/category-list.component-module';
@@ -66,6 +67,7 @@ import { NewCryptoServiceModule } from './services/new-crypto.service-module';
 import { ProductsSearchComponentModule } from './components/products-search/products-search.component-module';
 import { ProductsLiveReloadSearchComponentModule } from './components/products-live-reload-search/products-live-reload-search.component-module';
 import { ProductsSearchInServiceComponentModule } from './components/products-search-in-service/products-search-in-service.component-module';
+import { SortSingleProductComponentModule } from './components/sort-single-product/sort-single-product.component-module';
 
 @NgModule({
   imports: [
@@ -96,7 +98,8 @@ import { ProductsSearchInServiceComponentModule } from './components/products-se
       { path: 'crypto-master-details', component: CryptoMasterDetailsComponent },
       { path: 'products-search', component: ProductsSearchComponent },
       { path: 'products-search-live-reload', component: ProductsLiveReloadSearchComponent },
-      { path: 'products-search-service', component: ProductsSearchInServiceComponent }
+      { path: 'products-search-service', component: ProductsSearchInServiceComponent },
+      { path: 'sort-single-product', component: SortSingleProductComponent }
     ]),
     ProductListComponentModule,
     ProductsServiceModule,
@@ -136,7 +139,8 @@ import { ProductsSearchInServiceComponentModule } from './components/products-se
     NewCryptoServiceModule,
     ProductsSearchComponentModule,
     ProductsLiveReloadSearchComponentModule,
-    ProductsSearchInServiceComponentModule
+    ProductsSearchInServiceComponentModule,
+    SortSingleProductComponentModule
   ],
   exports: [RouterModule],
 })
